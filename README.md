@@ -76,7 +76,6 @@ Implement the `song_table_insert` query in `sql_queries.py`..
 #### open Test Note Book ..
 * connect with sql and postgresql://student:student@127.0.0.1/sparkifydb to access to Our sparkifydb DataBase.
 * Run SELECT statement SELECT * FROM songs LIMIT 5; to confirm insertion successfully with the correct columns.
-<img src="images/test1.png" width="750" height="750">
 
 ##### artists Table ..
 - Select columns for artist ID, name, location, latitude, and longitude
@@ -96,7 +95,6 @@ Implement the `artist_table_insert` query in `sql_queries.py`..
 #### open Test Note Book ..
 * connect with sql and postgresql://student:student@127.0.0.1/sparkifydb to access to Our sparkifydb DataBase.
 * Run SELECT statement SELECT * FROM artists LIMIT 5; to confirm insertion successfully with the correct columns.
-<img src="images/test2.png" width="750" height="750">
 
 
 ##### Process `log_data` ..
@@ -108,7 +106,6 @@ on the second dataset, `log_data`, to create the `time` and `users` dimensional 
 - Read the log file and view the data
   df = pd.read_json(filepath, lines=True)
   df.head()
-<img src="images/output3.png" width="750" height="750">
 
 
 ##### time Table ..
@@ -123,7 +120,6 @@ on the second dataset, `log_data`, to create the `time` and `users` dimensional 
   df_time['WeekDay'] = df_time.ts.dt.weekday
   df_time['WeekYear'] = df_time.ts.dt.weekofyear
   df_time.head()
-<img src="images/output4.png" width="750" height="750">
 
 
 ###### Insert Records into Time Table
@@ -136,7 +132,6 @@ Implement the `time_table_insert` query in `sql_queries.py` ..
 #### open Test Note Book ..
 * connect with sql and postgresql://student:student@127.0.0.1/sparkifydb to access to Our sparkifydb DataBase.
 * Run SELECT statement SELECT * FROM time LIMIT 5; to confirm insertion successfully with the correct columns.
-<img src="images/test3.png" width="750" height="750">
 
 ##### users Table ..
 - Select columns for user ID, first name, last name, gender and level and set to `user_df`
@@ -148,7 +143,6 @@ Implement the `user_table_insert` query in `sql_queries.py`
 * for i, row in user_df.iterrows():
    cur.execute(user_table_insert, row)
    conn.commit()
-<img src="images/test4.png" width="750" height="750">
 
 
 ##### songplays Table ..
@@ -185,7 +179,6 @@ Implement the `songplay_table_insert` query  in `sql_queries.py`
 - converting start time to DateTime 
   pd.to_datetime(row.ts,unit='ms')
   
-  <img src="images/test5.png" width="750" height="750">
 
 
 #### Open etl.py 
@@ -249,21 +242,14 @@ Implement the `songplay_table_insert` query  in `sql_queries.py`
 
 #### Lastly : Open Terminal ..
 - Final output for Song_Data
-  <img src="images/finaloutput1.png" width="750" height="750">
-  <img src="images/finaloutput2.png" width="750" height="750">
+
 - Final output for Log_Data
-  <img src="images/finaloutput3.png" width="750" height="750">
 
 #### open Test Note Book ..
 * connect with sql and postgresql://student:student@127.0.0.1/sparkifydb to access to Our sparkifydb DataBase.
 * Run SELECT statements to confirm output for each table.
 ##### songplays Table Final output ..
-  <img src="images/finaloutput4.png" width="750" height="750">
 ##### users Table Final output ..
-  <img src="images/finaloutput5.png" width="750" height="750">
 ##### songs Table Final output ..
-  <img src="images/finaloutput6.png" width="750" height="750">
 ##### artists Table Final output ..
-  <img src="images/finaloutput7.png" width="750" height="750">
 ##### time Table Final output ..
-  <img src="images/finaloutput8.png" width="750" height="750">
